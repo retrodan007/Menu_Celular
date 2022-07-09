@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.menu {
+    background-color: rgb(173, 34, 96);
+    width: 100vw;
+    height: 75px;
+    box-shadow: 0px 1px 3px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transition: 0.5s ease;
+    transform: scale(1.05);
+}
+
+.btn-menu {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+
+.menu-items {
+    display: flex;
+    list-style: none;
+}
+
+.menu-items li {
+    border-radius: 3px;
+    margin-left:15px;
+    border: 1px solid rgba(0,0,0,0.1)
+}
+
+.menu-items li a {
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+
+.menu-items li:hover,  li.active {
+    transition: all 0.5s ease;
+    background-color: rgba(0,0,0,0.1);
+    transform: scale(1.05);
+}
+
+ul.show {
+    top: 65px;
+}
+
+@media screen and (max-width:952px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu-items li a {
+        font-size: 16px;
+    }
+    
+}
+
+@media screen and (max-width:858px) {
+
+
+    body {
+        background-color:rgb(173, 34, 96) ;
+    }
+
+    .menu {
+        height: 65px;
+        box-shadow: 0px 1px 5px 2px black;
+    }
+
+    .btn-menu {
+        display:inline-flex;
+    }
+
+    .menu-items {
+        position: fixed;
+        top:  75px;
+        left: 0;
+        background-color: rgb(173, 34, 96);
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all 0.5s ease;
+    }
+
+    .menu-items li {
+        margin: 15px;
+        width: 90%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(0,0,0,0.2);
+    }
+
+    .btn-menu:hover {
+        transition: 0.5s ease;
+        transform: scale(1.1);
+    }
+
+    .btn-menu:active {
+        transition: 0.5s ease;
+        transform: scale(1);
+    }
+
+    .menu-items.active {
+        transition: 0.5s ease;
+        transform: translateX(0%);
+    }
+}
